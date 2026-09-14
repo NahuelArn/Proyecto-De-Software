@@ -1,0 +1,358 @@
+/* =========================================================
+   La Cocina de Casa — estilosIA.css
+   Sitio estático de una sola página (HTML + CSS, sin scripts)
+   ========================================================= */
+
+:root {
+  --papel: #F7F3EA;
+  --papel-alto: #FFFFFF;
+  --tinta: #262521;
+  --tinta-suave: #5C594F;
+  --pino: #33473A;
+  --pino-oscuro: #223029;
+  --mostaza: #C98A2A;
+  --linea: #E3DCC9;
+
+  --salado: #5B6C4A;
+  --salado-fondo: #E7ECDE;
+  --dulce: #96324C;
+  --dulce-fondo: #F3E1E6;
+
+  --radio-borde: 3px;
+  --ancho-maximo: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Karla", "Segoe UI", sans-serif;
+  background: var(--papel);
+  color: var(--tinta);
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--pino-oscuro);
+  line-height: 1.15;
+  margin: 0 0 0.5em 0;
+}
+
+h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 600; }
+h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+
+p { margin: 0 0 1em 0; max-width: 68ch; }
+
+a {
+  color: var(--pino);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+a:hover { color: var(--mostaza); }
+
+.envoltorio {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Barra de navegación ---------- */
+
+.encabezado {
+  background: var(--pino-oscuro);
+  border-bottom: 4px solid var(--mostaza);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.barra-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  position: relative;
+}
+
+.marca {
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+  color: var(--papel);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.marca:hover { color: var(--mostaza); }
+.marca span { color: var(--mostaza); }
+
+.menu-toggle { display: none; }
+
+.menu-icono {
+  display: none;
+  cursor: pointer;
+  color: var(--papel);
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+}
+
+.enlaces-nav {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.enlaces-nav a {
+  color: var(--papel);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.enlaces-nav a:hover { color: var(--mostaza); border-bottom-color: var(--mostaza); }
+
+/* ---------- Pie de página ---------- */
+
+.pie {
+  background: var(--pino-oscuro);
+  color: var(--papel);
+  margin-top: 4rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.pie a { color: var(--mostaza); }
+
+/* ---------- Hero / portada ---------- */
+
+.hero {
+  padding: 4rem 0 3.5rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-texto .ojo { color: var(--mostaza); font-weight: 700; margin-bottom: 0.6rem; }
+
+.hero-botones { display: flex; gap: 1rem; margin-top: 1.6rem; flex-wrap: wrap; }
+
+.boton {
+  display: inline-block;
+  background: var(--pino);
+  color: var(--papel-alto);
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid var(--pino);
+}
+
+.boton:hover { background: var(--pino-oscuro); color: var(--papel-alto); }
+
+.boton-fantasma { background: transparent; color: var(--pino); }
+.boton-fantasma:hover { background: var(--pino); color: var(--papel-alto); }
+
+.hero-imagen img {
+  width: 100%;
+  border-radius: 14px;
+  border: 3px solid var(--pino-oscuro);
+  display: block;
+}
+
+/* ---------- Secciones generales ---------- */
+
+.seccion {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--linea);
+  scroll-margin-top: 5.5rem;
+}
+
+.seccion-intro { max-width: 68ch; }
+
+/* ---------- Selector de categoría (sin JS) ---------- */
+
+.pestanas {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1.8rem 0 2.2rem;
+}
+
+.pestanas input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pestanas label {
+  cursor: pointer;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid var(--linea);
+  font-weight: 700;
+  color: var(--tinta-suave);
+  background: var(--papel-alto);
+}
+
+.pestanas label:hover { border-color: var(--mostaza); }
+
+#tab-salado:checked ~ .pestanas label[for="tab-salado"] {
+  background: var(--salado);
+  border-color: var(--salado);
+  color: var(--papel-alto);
+}
+
+#tab-dulce:checked ~ .pestanas label[for="tab-dulce"] {
+  background: var(--dulce);
+  border-color: var(--dulce);
+  color: var(--papel-alto);
+}
+
+.panel-recetas { display: none; }
+
+#tab-salado:checked ~ .panel-salado,
+#tab-dulce:checked ~ .panel-dulce {
+  display: block;
+}
+
+/* ---------- Grilla y tarjetas de receta ---------- */
+
+.grilla-recetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.tarjeta-receta {
+  border: var(--radio-borde) solid var(--tarjeta-color, var(--pino));
+  border-radius: 10px;
+  background: var(--tarjeta-fondo, var(--papel-alto));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-salado .tarjeta-receta { --tarjeta-color: var(--salado); --tarjeta-fondo: var(--salado-fondo); }
+.panel-dulce .tarjeta-receta { --tarjeta-color: var(--dulce); --tarjeta-fondo: var(--dulce-fondo); }
+
+.tarjeta-receta img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-bottom: var(--radio-borde) solid var(--tarjeta-color, var(--pino));
+}
+
+.tarjeta-receta .contenido { padding: 1.1rem 1.2rem 1.3rem; }
+.tarjeta-receta h3 { margin-bottom: 0.5rem; color: var(--tinta); }
+
+.tarjeta-receta .enlace-descarga {
+  font-weight: 700;
+  color: var(--tarjeta-color, var(--pino));
+  text-decoration: underline;
+}
+
+/* ---------- Tarjeta de info (quiénes somos) ---------- */
+
+.tarjeta-info {
+  background: var(--papel-alto);
+  border: 2px solid var(--linea);
+  border-radius: 12px;
+  padding: 1.6rem 1.8rem;
+  margin-top: 1.5rem;
+  max-width: 640px;
+}
+
+/* ---------- Formulario de contacto (estático, sin backend) ---------- */
+
+.formulario-contacto {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1.8rem;
+  max-width: 480px;
+}
+
+.formulario-contacto label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--pino-oscuro);
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 2px solid var(--linea);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--papel-alto);
+  color: var(--tinta);
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  outline: none;
+  border-color: var(--mostaza);
+}
+
+.formulario-contacto textarea { resize: vertical; min-height: 120px; }
+
+/* ---------- Accesibilidad: foco visible ---------- */
+
+a:focus-visible,
+.pestanas label:focus-within,
+.boton:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--mostaza);
+  outline-offset: 2px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-imagen { order: -1; }
+  .grilla-recetas { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .menu-icono { display: block; }
+
+  .enlaces-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--pino-oscuro);
+    border-top: 1px solid rgba(247,243,234,0.15);
+  }
+
+  .enlaces-nav a { padding: 1rem 1.5rem; border-bottom: 1px solid rgba(247,243,234,0.1); display: block; }
+
+  .menu-toggle:checked ~ .enlaces-nav { display: flex; }
+}
+
+@media (max-width: 560px) {
+  .grilla-recetas { grid-template-columns: 1fr; }
+  .pestanas { justify-content: stretch; }
+  .pestanas label { flex: 1; text-align: center; }
+}

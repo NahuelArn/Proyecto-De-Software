@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Cocina de Casa — Recetas saladas y dulces</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+<header class="encabezado">
+  <nav class="barra-nav">
+    <a href="#inicio" class="marca">La Cocina <span>de Casa</span></a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icono" aria-label="Abrir menú">&#9776;</label>
+    <ul class="enlaces-nav">
+      <li><a href="#catalogo">Catálogo de recetas</a></li>
+      <li><a href="#quienes-somos">Quiénes somos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="envoltorio">
+
+  <!-- ===================== INICIO ===================== -->
+  <section id="inicio" class="hero">
+    <div class="hero-texto">
+      <p class="ojo">Recetas de siempre, contadas con calma</p>
+      <h1>Comida casera, salada o dulce, para cualquier día de la semana</h1>
+      <p>Un recetario simple con las preparaciones que más hacemos en casa: platos salados
+      para el almuerzo o la cena, y postres dulces para cuando se antoja algo rico.
+      Cada receta trae su foto y un PDF para descargar y llevar a la cocina.</p>
+      <div class="hero-botones">
+        <a href="#catalogo" class="boton">Ver el catálogo</a>
+        <a href="#quienes-somos" class="boton boton-fantasma">Quiénes somos</a>
+      </div>
+    </div>
+    <div class="hero-imagen">
+      <img src="imagenes/receta1.png" alt="Milanesas napolitanas recién horneadas">
+    </div>
+  </section>
+
+  <!-- ===================== CATÁLOGO ===================== -->
+  <section id="catalogo" class="seccion">
+    <div class="seccion-intro">
+      <h2>Catálogo de recetas</h2>
+      <p>Elegí una categoría para ver las recetas correspondientes. Cada tarjeta incluye
+      una foto, el nombre del plato y un enlace para descargar la receta completa en PDF.</p>
+    </div>
+
+    <input type="radio" name="categoria" id="tab-salado" checked>
+    <input type="radio" name="categoria" id="tab-dulce">
+
+    <div class="pestanas">
+      <label for="tab-salado">Salado</label>
+      <label for="tab-dulce">Dulce</label>
+    </div>
+
+    <div class="panel-recetas panel-salado">
+      <div class="grilla-recetas">
+
+        <article class="tarjeta-receta">
+          <img src="imagenes/receta1.png" alt="Milanesas napolitanas">
+          <div class="contenido">
+            <h3>Milanesas napolitanas</h3>
+            <p>Milanesas gratinadas con salsa de tomate, jamón y muzzarella, listas en minutos.</p>
+            <a class="enlace-descarga" href="recetarios/milanesas-napolitanas.pdf">Receta completa (PDF)</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-receta">
+          <img src="imagenes/receta2.png" alt="Fideos con salsa">
+          <div class="contenido">
+            <h3>Fideos con salsa</h3>
+            <p>Fideos al dente con una salsa de tomate casera, rápida y con pocos ingredientes.</p>
+            <a class="enlace-descarga" href="recetarios/fideos-con-salsa.pdf">Receta completa (PDF)</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-receta">
+          <img src="imagenes/receta3.png" alt="Tarta de acelga">
+          <div class="contenido">
+            <h3>Tarta de acelga</h3>
+            <p>Tarta de acelga y queso con masa casera, ideal para el almuerzo o para llevar.</p>
+            <a class="enlace-descarga" href="recetarios/tarta-de-acelga.pdf">Receta completa (PDF)</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="panel-recetas panel-dulce">
+      <div class="grilla-recetas">
+
+        <article class="tarjeta-receta">
+          <img src="imagenes/receta4.png" alt="Flan casero">
+          <div class="contenido">
+            <h3>Flan casero</h3>
+            <p>Flan suave hecho a baño María, con caramelo y muy pocos ingredientes.</p>
+            <a class="enlace-descarga" href="recetarios/flan-casero.pdf">Receta completa (PDF)</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-receta">
+          <img src="imagenes/receta5.png" alt="Pastelitos de membrillo">
+          <div class="contenido">
+            <h3>Pastelitos de membrillo</h3>
+            <p>Pastelitos crocantes rellenos de dulce de membrillo, dorados y pasados por almíbar.</p>
+            <a class="enlace-descarga" href="recetarios/pastelitos-de-membrillo.pdf">Receta completa (PDF)</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-receta">
+          <img src="imagenes/receta6.png" alt="Chocotorta">
+          <div class="contenido">
+            <h3>Chocotorta</h3>
+            <p>El clásico postre sin horno de galletitas, dulce de leche y queso crema.</p>
+            <a class="enlace-descarga" href="recetarios/chocotorta.pdf">Receta completa (PDF)</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== QUIÉNES SOMOS ===================== -->
+  <section id="quienes-somos" class="seccion">
+    <div class="seccion-intro">
+      <h2>Quiénes somos</h2>
+      <p>La Cocina de Casa es un recetario personal donde reunimos las preparaciones
+      que más repetimos en nuestra propia cocina: platos salados para el día a día
+      y postres dulces para las ocasiones en que se antoja algo rico.</p>
+      <p>El sitio se mantiene y actualiza de forma independiente, sin publicidad
+      ni patrocinios. Cada receta se prueba en casa antes de subirla, y se
+      acompaña siempre de una foto y de un PDF descargable para tener a mano
+      mientras se cocina.</p>
+    </div>
+    <div class="tarjeta-info">
+      <h3>Mantenimiento del sitio</h3>
+      <p>El sitio es mantenido por <strong>Familia Rodríguez</strong>, cocineros
+      aficionados. Ante cualquier duda sobre el contenido de las recetas o el
+      funcionamiento del sitio, podés escribirnos desde la sección de
+      <a href="#contacto">contacto</a>.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACTO ===================== -->
+  <section id="contacto" class="seccion">
+    <div class="seccion-intro">
+      <h2>Contacto</h2>
+      <p>¿Tenés una consulta, una sugerencia o querés compartir tu propia receta?
+      Completá el formulario y te respondemos apenas podamos.</p>
+    </div>
+
+    <form class="formulario-contacto" action="mailto:contacto@lacocinadecasa.com" method="post" enctype="text/plain">
+      <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+      </div>
+      <div>
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+      </div>
+      <div>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribí tu mensaje acá" required></textarea>
+      </div>
+      <button type="submit" class="boton">Enviar mensaje</button>
+    </form>
+
+    <div class="tarjeta-info">
+      <h3>Otras formas de escribirnos</h3>
+      <p>Correo: <a href="mailto:contacto@lacocinadecasa.com">contacto@lacocinadecasa.com</a><br>
+      Respondemos de lunes a viernes, de 9 a 18 h.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <p>La Cocina de Casa · Sitio estático hecho con HTML y CSS · <a href="#contacto">Escribinos</a></p>
+</footer>
+
+</body>
+</html>

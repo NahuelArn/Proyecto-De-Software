@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf5;
+    color: #2f241f;
+}
+
+/* BARRA DE NAVEGACIÓN */
+
+header {
+    background: #7b3f00;
+    padding: 18px 6%;
+}
+
+.barra-nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.barra-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.barra-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 7px;
+}
+
+.barra-nav li a:hover,
+.barra-nav li a:focus {
+    background: #9a5b20;
+}
+
+/* CONTENIDO */
+
+main {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+.presentacion {
+    text-align: center;
+    padding: 45px 10px 30px;
+}
+
+.presentacion h1 {
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.presentacion p {
+    font-size: 1.1rem;
+}
+
+/* CATEGORÍAS */
+
+.catalogo {
+    margin-bottom: 60px;
+}
+
+.catalogo > input {
+    display: none;
+}
+
+.selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.selector label {
+    cursor: pointer;
+    padding: 12px 35px;
+    border: 2px solid #7b3f00;
+    border-radius: 8px;
+    color: #7b3f00;
+    background: white;
+    font-weight: bold;
+}
+
+.selector label:hover {
+    background: #f1dfcc;
+}
+
+/* Por defecto se muestra SALADO */
+
+.contenido.dulce {
+    display: none;
+}
+
+#mostrar-salado:checked ~ .selector label[for="mostrar-salado"],
+#mostrar-dulce:checked ~ .selector label[for="mostrar-dulce"] {
+    background: #7b3f00;
+    color: white;
+}
+
+#mostrar-dulce:checked ~ .dulce {
+    display: block;
+}
+
+#mostrar-dulce:checked ~ .salado {
+    display: none;
+}
+
+.contenido h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* TARJETAS */
+
+.recetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.receta {
+    background: white;
+    border: 2px solid #6f88c9;
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.receta img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.receta h3 {
+    margin: 8px 0 15px;
+}
+
+.receta a {
+    display: inline-block;
+    padding: 9px 14px;
+    border-radius: 6px;
+    background: #7b3f00;
+    color: white;
+    text-decoration: none;
+}
+
+.receta a:hover,
+.receta a:focus {
+    background: #5e3000;
+}
+
+/* CONTACTO Y MANTENEDOR */
+
+.seccion {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    scroll-margin-top: 30px;
+}
+
+.seccion h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.formulario,
+.info {
+    background: white;
+    border: 1px solid #d5c4b5;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.formulario label {
+    display: block;
+    font-weight: bold;
+    margin: 14px 0 6px;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.formulario textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.formulario button {
+    margin-top: 16px;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #7b3f00;
+    color: white;
+    font: inherit;
+}
+
+.formulario button:hover {
+    background: #5e3000;
+}
+
+/* PIE */
+
+footer {
+    margin-top: 50px;
+    padding: 25px;
+    text-align: center;
+    background: #2f241f;
+    color: white;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+    .barra-nav {
+        flex-direction: column;
+    }
+
+    .recetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .recetas {
+        grid-template-columns: 1fr;
+    }
+
+    .barra-nav ul {
+        justify-content: center;
+    }
+
+    .selector label {
+        padding: 10px 25px;
+    }
+}
